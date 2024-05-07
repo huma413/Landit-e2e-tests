@@ -1,5 +1,4 @@
 
-
 const LANDIT_LOGIN_URL = 'https://app.accept.dev.landit.com/login'
 const EMAIL_FIELD = '#email-input'
 const PASSWORD_FIELD = '#password-input'
@@ -23,30 +22,16 @@ describe('First test', () => {
   it.only('I want to login to my app with valid credentials', () => 
   { 
     login(CORRECT_EMAIL,CORRECT_PASSWORD)
-    /*cy.server(); // Start the Cypress server
-    cy.route({
-      method: 'GET',
-      url: 'https://accept.dev.landit.com/api/v2/user/playbook',
-      status: 200, // Example status code (can be any valid HTTP status code)
-    }).as('stubbedPlaybookRoute');
-    // Trigger the request to the stubbed endpoint
-    cy.visit('https://app.accept.dev.landit.com/');
-    // Wait for the request to be stubbed
-    cy.wait('@stubbedPlaybookRoute');*/
-
-    cy.intercept('GET', 'https://accept.dev.landit.com/api/v2/user/playbook', (req) => {
+    cy.intercept('GET', 'https://accept.dev.landit.com/api/v2/user/playbook')
+    /*, (req) => {
       req.reply({
         statusCode: 200, // Example status code (can be any valid HTTP status code)
-      });
-    }).as('stubbedPlaybookRoute');
+      });*/
+    .as('stubbedPlaybookRoute');
     // Trigger the request to the stubbed endpoint
     cy.visit('https://app.accept.dev.landit.com/');
     // Wait for the request to be stubbed
     cy.wait('@stubbedPlaybookRoute');
-
-  
-    //cy.get('.MuiBox-root.css-1tqrc3r' , {timeout: 15000}).should('be.visible');
-    //cy.get((WHAT_COMING_UP_CARD),{ timeout: 10000 });
     cy.get(WHAT_COMING_UP_CARD).eq(0).click();
     cy.get(WHAT_COMING_UP_CARD_CLOSE).click();
     //assertions on Header 
