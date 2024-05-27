@@ -13,13 +13,13 @@ const HEADER_TEXT = '.MuiBox-root.css-lmon2n'
 const DROP_DOWN_CLICK = '.BaseIcon-root.MuiBox-root.css-1imca4n'
 const SIGNOUT_CLICK = '.MuiBox-root.css-8yc2i6'
 const ERROR_MESSAGE = '.Text-root > .css-0'
-const CLICK_COACHING = '.Text-root.Text-body2.MuiBox-root.MuiBox-root.css-17lj8al'
+const CLICK_COACHING = '.Text-root.Text-body2.MuiBox-root.MuiBox-root.css-k9cm5y'
 const BOOK_COACH_CLICK = '.Button-root.Button-small.Button-secondary.Button-fullWidth.MuiBox-root.css-1wrnwe1'
 
 
 describe('First test', () => {
  
-  it.only('I want to login to my app with valid credentials', () => 
+  it('I want to login to my app with valid credentials', () => 
   { 
     login(CORRECT_EMAIL,CORRECT_PASSWORD)
     cy.intercept('GET', 'https://accept.dev.landit.com/api/v2/user/playbook')
@@ -70,7 +70,7 @@ describe('First test', () => {
       cy.log(text2)
     })
   })
-  it ('I want to test coach booking flow', () =>
+  it.only ('I want to test coach booking flow', () =>
   {
     login(CORRECT_EMAIL,CORRECT_PASSWORD)
     cy.get(CLICK_COACHING).eq(6).click()
