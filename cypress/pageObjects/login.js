@@ -11,6 +11,7 @@ class Login
     {
         cy.get(this.EMAIL_FIELD).type(userName)
     }
+    
     setPassword(password)
     {
         cy.get(this.PASSWORD_FIELD).type(password)
@@ -19,15 +20,11 @@ class Login
     {
         cy.get(this.LOGIN_BUTTON).click()
     }
-    verifyErrorMessage()
+    //getter function
+    getErrorMessage()
     {
         cy.get(ERROR_MESSAGE)
-        .should('be.visible')
-        .invoke('text')
-        .then((text2) => {
-          cy.log(text2)
-      })
-    
+        
     }
 }
 export default Login;
