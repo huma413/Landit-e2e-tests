@@ -21,12 +21,13 @@ class Login
     }
     verifyErrorMessage()
     {
-        cy.get(this.ERROR_MESSAGE)
+        cy.get(ERROR_MESSAGE)
         .should('be.visible')
         .invoke('text')
         .then((text2) => {
           cy.log(text2)
-        })
+      })
+    
     }
 }
 export default Login;
