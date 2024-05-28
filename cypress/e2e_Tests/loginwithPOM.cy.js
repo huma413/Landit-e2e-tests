@@ -1,5 +1,5 @@
 
-import Login from "../pageObjects/login"
+import Login from "../pages/login"
 const LOGIN_PAGE = Cypress.env('login_url');
 
 describe('POM', () => {

@@ -23,7 +23,7 @@ class Login
     //getter function
     getErrorMessage()
     {
-        cy.get(ERROR_MESSAGE)
+        cy.get(this.ERROR_MESSAGE)
         
     }
 }
