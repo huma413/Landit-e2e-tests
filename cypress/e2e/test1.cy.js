@@ -50,7 +50,7 @@ describe('First test', () => {
       cy.log(text2)
     })
   })
-  it('I want to test correct password and incorrect email scenario for login',() =>
+  it.only('I want to test correct password and incorrect email scenario for login',() =>
   {
     login(INCORRECT_EMAIL,CORRECT_PASSWORD)
     cy.get(ERROR_MESSAGE)

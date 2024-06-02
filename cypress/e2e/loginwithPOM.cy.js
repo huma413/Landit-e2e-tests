@@ -41,11 +41,13 @@ describe('POM', () => {
             login.setUserName("huma.tabassum@arbisoftt.com")
             login.setPassword("Security@4581")
             login.clickLogin();
-            login.getErrorMessage().should('be.visible')
+            login.a
+            .should('be.visible')
             .invoke('text')
             .then((text2) => {
-              cy.log(text2)
-          })
+                cy.log(text2)
+            })
+            
         }
     )
 }
